@@ -42,11 +42,12 @@ We try DQN, Double DQN(DDQN) and dueling DQN. Please refer to the [presentation]
     <img src="https://github.com/guozhonghao1994/Deep_Reinforcement_Learning_on_Car_Racing_Game/blob/master/figure/start.gif" alt="Sample"  width="300" height="260">
     <img src="https://github.com/guozhonghao1994/Deep_Reinforcement_Learning_on_Car_Racing_Game/blob/master/figure/play.gif" alt="Sample"  width="300" height="260">
     
-| DQN    | DDQN   | Dueling DQN | Human   |
-| ---    | ---    | ---         | ---     |
-|  755   | 784.95 | 737.35      | 216.35  |
+                                        | DQN    | DDQN   | Dueling DQN | Human   |
+                                        | ---    | ---    | ---         | ---     |
+                                        |  755   | 784.95 | 737.35      | 216.35  |
 
-![](https://lh6.googleusercontent.com/9O9qqOpWvDyjfD_OaymG8bFSeGCB2ZkcUJYZ8whiUVhMOuEoOAnI-8M49fAwppmerlmj2XVmBbvDyuKJ3yxvCA6U8J0xvbtcHkgs_QvXNecXvR7IDPvWolomNMftJB3QhkACq_0We4k)
+<p align="center">
+    <img src="https://github.com/guozhonghao1994/Deep_Reinforcement_Learning_on_Car_Racing_Game/blob/master/figure/score.png" alt="Sample" alt="Sample"  width="300" height="260">
 
 ## Reference
 
