@@ -12,7 +12,7 @@ Our project explores the algorithms of reinforcement learning (RL) used in game 
 [Dueling Network Architectures for Deep Reinforcement Learning](http://proceedings.mlr.press/v48/wangf16.pdf)
 
 ## Game Environment
-Car-Racing-v0 from gym library as our basic environment
+Car-Racing-v0 from gym library as our basic environment \n
 Agent: car
 States: pics taken every 4 frames of 96×96 pixels
 Actions: forward, brake, left, right
