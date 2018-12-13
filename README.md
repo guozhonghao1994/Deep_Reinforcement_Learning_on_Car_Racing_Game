@@ -13,6 +13,7 @@ Our project explores the algorithms of reinforcement learning (RL) used in game 
 
 ## Game Environment
 [Car Racing-v0](https://gym.openai.com/envs/CarRacing-v0/)
+
 ![](https://media.giphy.com/media/3og0IEKu84Ros9izyU/giphy.gif)
 
 ## Algorithm
