@@ -19,4 +19,8 @@ Our project explores the algorithms of reinforcement learning (RL) used in game 
 ## Algorithm
 We try DQN, Double DQN(DDQN) and dueling DQN. Please refer to the [presentation](https://github.com/guozhonghao1994/Deep_Reinforcement_Learning_on_Car_Racing_Game/blob/master/Presentation.pdf) for detailed algorithm explanation. Also, you should have some basic knowledge on [Reinforcement Learning](https://en.wikipedia.org/wiki/Reinforcement_learning) and [Q-learning](https://en.wikipedia.org/wiki/Q-learning). 
 
+## Installation
+`pip install -r requirements.txt`
+
+necessary module: `tensorflow`, `pygame`, `gym`, `Box2D`, `VC++ 14.0` ...
 
