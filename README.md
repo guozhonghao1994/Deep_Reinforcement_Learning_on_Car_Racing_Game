@@ -38,6 +38,7 @@ We try DQN, Double DQN(DDQN) and dueling DQN. Please refer to the [presentation]
 <p align="center">
     <img src="https://github.com/guozhonghao1994/Deep_Reinforcement_Learning_on_Car_Racing_Game/blob/master/figure/Figure_10.png" alt="Sample"  width="352" height="260">
     <img src="https://github.com/guozhonghao1994/Deep_Reinforcement_Learning_on_Car_Racing_Game/blob/master/figure/Figure_11.png" alt="Sample"  width="352" height="260">
+    <img src="https://github.com/guozhonghao1994/Deep_Reinforcement_Learning_on_Car_Racing_Game/blob/master/figure/Figure_12.png" alt="Sample"  width="352" height="260">
 
 ### Test Result
 
