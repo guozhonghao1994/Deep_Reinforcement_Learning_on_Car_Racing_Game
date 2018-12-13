@@ -36,9 +36,9 @@ We try DQN, Double DQN(DDQN) and dueling DQN. Please refer to the [presentation]
 
 ### Test Result
 
-<p align="center">
-    <img src="https://img-blog.csdn.net/20180904102458446?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2xvdmVjaHJpczAw/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70" alt="Sample"  width="250" height="140">
+<p align="left">
+    <img src="https://github.com/guozhonghao1994/Deep_Reinforcement_Learning_on_Car_Racing_Game/blob/master/figure/start.gif" alt="Sample"  width="96" height="96">
     <p align="left">
-        <em>图片示例2</em>
+        <em>start training</em>
     </p>
 </p>
