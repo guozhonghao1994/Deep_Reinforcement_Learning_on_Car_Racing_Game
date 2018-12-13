@@ -33,12 +33,12 @@ We try DQN, Double DQN(DDQN) and dueling DQN. Please refer to the [presentation]
 ## Result
 ### Training Result
 <p align="center">
-    <img src="https://github.com/guozhonghao1994/Deep_Reinforcement_Learning_on_Car_Racing_Game/blob/master/figure/Figure_10.png" alt="Sample"  width="640" height="478">
-    <img src="https://github.com/guozhonghao1994/Deep_Reinforcement_Learning_on_Car_Racing_Game/blob/master/figure/Figure_11.png" alt="Sample"  width="640" height="478">
+    <img src="https://github.com/guozhonghao1994/Deep_Reinforcement_Learning_on_Car_Racing_Game/blob/master/figure/Figure_10.png" alt="Sample"  width="320" height="236">
+    <img src="https://github.com/guozhonghao1994/Deep_Reinforcement_Learning_on_Car_Racing_Game/blob/master/figure/Figure_11.png" alt="Sample"  width="320" height="236">
 
 ### Test Result
 
 <p align="center">
-    <img src="https://github.com/guozhonghao1994/Deep_Reinforcement_Learning_on_Car_Racing_Game/blob/master/figure/start.gif" alt="Sample"  width="300" height="300">
-    <img src="https://github.com/guozhonghao1994/Deep_Reinforcement_Learning_on_Car_Racing_Game/blob/master/figure/play.gif" alt="Sample"  width="300" height="300">
+    <img src="https://github.com/guozhonghao1994/Deep_Reinforcement_Learning_on_Car_Racing_Game/blob/master/figure/start.gif" alt="Sample"  width="300" height="260">
+    <img src="https://github.com/guozhonghao1994/Deep_Reinforcement_Learning_on_Car_Racing_Game/blob/master/figure/play.gif" alt="Sample"  width="300" height="260">
     
