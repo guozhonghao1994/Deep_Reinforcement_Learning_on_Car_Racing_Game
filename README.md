@@ -22,7 +22,7 @@ We try DQN, Double DQN(DDQN) and dueling DQN. Please refer to the [presentation]
 ## Installation
 1. `pip install -r requirements.txt`
 
-  necessary module: `tensorflow`, `pygame`, `gym`, `Box2D`, `VC++ 14.0` ...
+    necessary module: `tensorflow`, `pygame`, `gym`, `Box2D`, `VC++ 14.0` ...
 
 2. In DQN/DDQN/dueling DQN folder, run `python car_runner_main.py`
 
