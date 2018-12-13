@@ -12,19 +12,8 @@ Our project explores the algorithms of reinforcement learning (RL) used in game 
 [Dueling Network Architectures for Deep Reinforcement Learning](http://proceedings.mlr.press/v48/wangf16.pdf)
 
 ## Game Environment
-Car-Racing-v0 from gym library as our basic environment
-
-Agent: car
-
-States: pics taken every 4 frames of 96×96 pixels
-
-Actions: forward, brake, left, right
-
-Reward: 
-
-if action detected, reward -= 0.1
-
-if running out of playfield, reward -= 150
+[Car Racing-v0](https://gym.openai.com/envs/CarRacing-v0/)
+![](https://media.giphy.com/media/3og0IEKu84Ros9izyU/giphy.gif)
 
 ## Algorithm
 
