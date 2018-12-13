@@ -46,7 +46,10 @@ We try DQN, Double DQN(DDQN) and dueling DQN. Please refer to the [presentation]
 | ---    | ---    | ---         | ---     |
 |  755   | 784.95 | 737.35      | 216.35  |
 
+![](https://lh6.googleusercontent.com/9O9qqOpWvDyjfD_OaymG8bFSeGCB2ZkcUJYZ8whiUVhMOuEoOAnI-8M49fAwppmerlmj2XVmBbvDyuKJ3yxvCA6U8J0xvbtcHkgs_QvXNecXvR7IDPvWolomNMftJB3QhkACq_0We4k)
+
 ## Reference
+
 
 ## License
 
