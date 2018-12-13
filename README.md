@@ -28,3 +28,11 @@ We try DQN, Double DQN(DDQN) and dueling DQN. Please refer to the [presentation]
 
 3. If you'd like to utilize the trained model, `load_checkpoint = True` in *python car_runner_main.py*
 
+4. On CPU, it takes about 8 hours to get a well-trained model.
+
+## Result
+### Training Result
+
+
+### Test Result
+![]https://github.com/guozhonghao1994/Deep_Reinforcement_Learning_on_Car_Racing_Game/blob/master/figure/play.gif
