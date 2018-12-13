@@ -51,7 +51,7 @@ We try DQN, Double DQN(DDQN) and dueling DQN. Please refer to the [presentation]
    |  755   | 784.95 | 737.35      | 216.35  |
 
 <p align="center">
-    <img src="https://github.com/guozhonghao1994/Deep_Reinforcement_Learning_on_Car_Racing_Game/blob/master/figure/score.png" alt="Sample" alt="Sample"  width="512" height="317">
+    <img src="https://github.com/guozhonghao1994/Deep_Reinforcement_Learning_on_Car_Racing_Game/blob/master/figure/score.png" alt="Sample" alt="Sample"  width="410" height="254">
 
 The dueling DQN doesn't perform as well as we expected. Some speculated reasons are in the presentation.
 
