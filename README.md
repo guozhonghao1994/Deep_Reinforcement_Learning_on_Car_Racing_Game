@@ -46,4 +46,11 @@ We try DQN, Double DQN(DDQN) and dueling DQN. Please refer to the [presentation]
 | ---    | ---    | ---         | ---     |
 |  755   | 784.95 | 737.35      | 216.35  |
 
+## Reference
+
+## License
+
+[Apache License 2.0](LICENSE)
+
+
     
