@@ -17,7 +17,6 @@ Our project explores the algorithms of reinforcement learning (RL) used in game 
 ![](https://media.giphy.com/media/3og0IEKu84Ros9izyU/giphy.gif)
 
 ## Algorithm
-
-
+We try DQN, Double DQN(DDQN) and dueling DQN. Please refer to the [presentation](https://github.com/guozhonghao1994/Deep_Reinforcement_Learning_on_Car_Racing_Game/blob/master/Presentation.pdf) for detailed algorithm explanation. Also, you should have some basic knowledge on [Reinforcement Learning](https://en.wikipedia.org/wiki/Reinforcement_learning) and [Q-learning](https://en.wikipedia.org/wiki/Q-learning). 
 
 
