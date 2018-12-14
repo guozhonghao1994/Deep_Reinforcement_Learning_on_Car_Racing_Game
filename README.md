@@ -33,6 +33,17 @@ We try DQN, Double DQN(DDQN) and dueling DQN. Please refer to the [presentation]
 
 4. On CPU, it takes about 8 hours to get a well-trained model.
 
+## Introduction
+The DQN,DDQN and dueling DQN have similar structures. Take DQN for example:
+
+DQN/car_runner_main.py - main entrance, the executable file
+
+DQN/dqn/agent.py - DQN model
+
+DQN/dqn/experience_replay.py - experience replay
+
+data/plot.py - plot figures
+
 ## Result
 ### Training Result
 <p align="center">
