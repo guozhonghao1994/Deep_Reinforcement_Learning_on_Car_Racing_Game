@@ -3,7 +3,7 @@
 ![License](https://img.shields.io/badge/license-apache2_2-blue.svg)
 
 ## Task
-Our project explores the algorithms of reinforcement learning (RL) used in game playing. We study several RL algorithms and implement them in a car racing game. The RL methods include, but not limited to, DQN, Double DQN, and Dueling DQN. After the RL methods been implemented, we make comparison between these results and analyze the characteristics of each method.
+The aim of our team was to explore three different DQN reinforcement learning networks. First, we learned and implemented Deep Q-network (DQN). Then, to improve Q value estimation method, we implemented Double Deep Q-network (DDQN), after that, we managed to improve improve network structure, so we implemented Dueling Deep Q-network (Dueling DQN). In experimental part, we trained each model for more than 10 hours and recorded and plotted average reward and average Q value of each model as  experimental results. Finally, we made comparison among these results and it showed that DDQN performed best; followed by DQN while Dueling network had the worst performance.
 
 ## Related Work
 [Playing Atari with Deep Reinforcement Learning](https://www.cs.toronto.edu/~vmnih/docs/dqn.pdf)
