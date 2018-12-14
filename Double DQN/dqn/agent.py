@@ -3,7 +3,7 @@ from skimage import color, transform
 import tensorflow.contrib.slim as slim
 import tensorflow as tf
 import itertools as it
-from dqn.experience_history import ExperienceHistory
+from experience_replay import ExperienceHistory
 
 class DQN:
     """
