@@ -75,5 +75,11 @@ Dec.12,2018 [Presentation](https://github.com/guozhonghao1994/Deep_Reinforcement
 Dec.14,2018 [Final Report]
 (Coming Soon...)
 
+## References
+1. car_racing.py is our gaming environment which we adopted from gym library.
+2. Three DQN networks were implemented by us where we chose same hyperparameters as those in the three main referencing papers.
+3. Three main DQN networks loss functions were modified by us.
+
+
 
     
