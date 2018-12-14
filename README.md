@@ -79,7 +79,6 @@ Dec.14,2018 [Final Report]
 1. car_racing.py is our gaming environment which we adopted from gym library.
 2. Three DQN networks were implemented by us where we chose same hyperparameters as those in the three main referencing papers.
 3. Three main DQN networks loss functions were modified by us.
-
-
+4. The experience_replay part is referenced from diegoalejogm's github.
 
     
