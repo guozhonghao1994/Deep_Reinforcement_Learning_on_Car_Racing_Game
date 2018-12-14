@@ -15,7 +15,7 @@ Our project explores the algorithms of reinforcement learning (RL) used in game 
 [Dueling Network Architectures for Deep Reinforcement Learning](http://proceedings.mlr.press/v48/wangf16.pdf)
 
 ## Game Environment
-[Car Racing-v0](https://gym.openai.com/envs/CarRacing-v0/)
+OpenAI [Car Racing-v0](https://gym.openai.com/envs/CarRacing-v0/)
 
 ![](https://media.giphy.com/media/3og0IEKu84Ros9izyU/giphy.gif)
 
