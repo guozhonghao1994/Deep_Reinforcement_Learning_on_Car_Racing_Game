@@ -57,7 +57,7 @@ The DQN,DDQN and dueling DQN have similar structures. Take DQN for example:
     <img src="https://github.com/guozhonghao1994/Deep_Reinforcement_Learning_on_Car_Racing_Game/blob/master/figure/play.gif" alt="Sample"  width="300" height="260">
     
 | DQN    | DDQN   | Dueling DQN | Human   |
-:-: | :-: | :-:
+| ---    | ---    | ---         | ---     |
 |  755   | 784.95 | 737.35      | 216.35  |
 
 <p align="center">
