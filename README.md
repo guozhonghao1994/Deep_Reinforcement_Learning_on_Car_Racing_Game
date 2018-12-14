@@ -65,8 +65,5 @@ Dec.12,2018 [Presentation](https://github.com/guozhonghao1994/Deep_Reinforcement
 Dec.14,2018 [Final Report]
 ()
 
-## Reference
-Thanks to [pekaalto](https://github.com/pekaalto/DQN)
-
 
     
