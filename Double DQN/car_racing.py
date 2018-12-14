@@ -82,13 +82,13 @@ env = gym.make(env_name)
 
 # Train without loading pretrained model
 load_model = False
-model_path = "./tmp/checkpoint01"
+model_path = "./data/DDQN"
 train_episodes = 4000
 save_freq_episodes = 200
 
 # Train with loading existing model
 # load_model = True
-# model_path = "./data/checkpoint02"
+# model_path = "./data/DDQN"
 # train_episodes = 0
 
 # Start Tensorflow session
