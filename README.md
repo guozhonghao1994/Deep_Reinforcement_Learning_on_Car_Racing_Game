@@ -27,16 +27,16 @@ We try DQN, Double DQN(DDQN) and dueling DQN. Please refer to the [presentation]
 
     necessary module: `tensorflow`, `pygame`, `gym`, `Box2D`, `VC++ 14.0` ...
 
-2. In DQN/DDQN/dueling DQN folder, run `python car_runner_main.py`
+2. In DQN/DDQN/dueling DQN folder, run `python car_racing.py`
 
-3. If you'd like to utilize the trained model, switch `load_checkpoint = True` in *python car_runner_main.py*
+3. If you'd like to utilize the trained model, switch `load_mdoel = True` in *python car_runner_main.py*
 
 4. On CPU, it takes about 8 hours to get a well-trained model.
 
 ## Introduction
 The DQN,DDQN and dueling DQN have similar structures. Take DQN for example:
 
-`DQN/car_runner_main.py` - main entrance, the executable file
+`DQN/car_cacing.py` - main entrance, the executable file
 
 `DQN/dqn/agent.py` - DQN model
 
