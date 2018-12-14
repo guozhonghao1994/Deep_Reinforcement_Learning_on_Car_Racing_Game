@@ -72,8 +72,7 @@ Nov.19,2018 [Project Progress](https://github.com/guozhonghao1994/Deep_Reinforce
 
 Dec.12,2018 [Presentation](https://github.com/guozhonghao1994/Deep_Reinforcement_Learning_on_Car_Racing_Game/blob/master/Presentation.pdf)
 
-Dec.14,2018 [Final Report]
-(https://github.com/guozhonghao1994/Deep_Reinforcement_Learning_on_Car_Racing_Game/blob/master/Final%20Report.pdf)
+Dec.14,2018 [Final Report](https://github.com/guozhonghao1994/Deep_Reinforcement_Learning_on_Car_Racing_Game/blob/master/Final%20Report.pdf)
 
 ## References
 1. car_racing.py is our gaming environment which we adopted from gym library.
