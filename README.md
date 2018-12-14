@@ -55,6 +55,16 @@ We try DQN, Double DQN(DDQN) and dueling DQN. Please refer to the [presentation]
 
 The dueling DQN doesn't perform as well as we expected. Some speculated reasons are in the presentation.
 
+## Timeline
+Oct.15,2018 [Project Proposal](https://github.com/guozhonghao1994/Deep_Reinforcement_Learning_on_Car_Racing_Game/blob/master/Project%20Proposal.pdf)
+
+Nov.19,2018 [Project Progress](https://github.com/guozhonghao1994/Deep_Reinforcement_Learning_on_Car_Racing_Game/blob/master/Project%20Update.pdf)
+
+Dec.12,2018 [Presentation](https://github.com/guozhonghao1994/Deep_Reinforcement_Learning_on_Car_Racing_Game/blob/master/Presentation.pdf)
+
+Dec.14,2018 [Final Report]
+()
+
 ## Reference
 Thanks to [pekaalto](https://github.com/pekaalto/DQN)
 
