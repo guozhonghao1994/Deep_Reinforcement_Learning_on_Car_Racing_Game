@@ -29,7 +29,7 @@ We try DQN, Double DQN(DDQN) and dueling DQN. Please refer to the [presentation]
 
 2. In DQN/DDQN/dueling DQN folder, run `python car_racing.py`
 
-3. If you'd like to utilize the trained model, switch `load_mdoel = True` in *python car_runner_main.py*
+3. If you'd like to utilize the trained model, switch `load_mdoel = True` in *python car_racing.py*
 
 4. On CPU, it takes about 8 hours to get a well-trained model.
 
