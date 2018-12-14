@@ -36,13 +36,13 @@ We try DQN, Double DQN(DDQN) and dueling DQN. Please refer to the [presentation]
 ## Introduction
 The DQN,DDQN and dueling DQN have similar structures. Take DQN for example:
 
-DQN/car_runner_main.py - main entrance, the executable file
+`DQN/car_runner_main.py` - main entrance, the executable file
 
-DQN/dqn/agent.py - DQN model
+`DQN/dqn/agent.py` - DQN model
 
-DQN/dqn/experience_replay.py - experience replay
+`DQN/dqn/experience_replay.py` - experience replay
 
-data/plot.py - plot figures
+`data/plot.py` - plot figures
 
 ## Result
 ### Training Result
@@ -73,7 +73,7 @@ Nov.19,2018 [Project Progress](https://github.com/guozhonghao1994/Deep_Reinforce
 Dec.12,2018 [Presentation](https://github.com/guozhonghao1994/Deep_Reinforcement_Learning_on_Car_Racing_Game/blob/master/Presentation.pdf)
 
 Dec.14,2018 [Final Report]
-()
+(Coming Soon...)
 
 
     
