@@ -3,22 +3,9 @@ from skimage import color, transform
 import tensorflow.contrib.slim as slim
 import tensorflow as tf
 import itertools as it
-from experience_replay import ExperienceHistory
+from experience_replay import ExperienceReplay
 
 class DQN:
-    """
-    General DQN agent.
-    Can be applied to any standard environment
-
-    The implementation follows:
-    Mnih et. al - Playing Atari with Deep Reinforcement Learning https://arxiv.org/pdf/1312.5602.pdf
-
-    The q-network structure is different from the original paper
-
-    see also:
-    David Silver's RL course lecture 6: https://www.youtube.com/watch?v=UoPei5o4fps&t=1s
-    """
-
     def __init__(self,
             env,
             batchsize=64,
@@ -38,25 +25,8 @@ class DQN:
             optimizer_params = None,
             action_map=None
     ):
-        self.exp_history = ExperienceHistory(
-            num_frame_stack,
-            capacity=experience_capacity,
-            pic_size=pic_size
-        )
-
-        # in playing mode we don't store the experience to agent history
-        # but this cache is still needed to get the current frame stack
-        self.playing_cache = ExperienceHistory(
-            num_frame_stack,
-            capacity=num_frame_stack * 5 + 10,
-            pic_size=pic_size
-        )
-
-        if action_map is not None:
-            self.dim_actions = len(action_map)
-        else:
-            self.dim_actions = env.action_space.n
-
+        self.exp_history = ExperienceReplay(num_frame_stack,capacity=experience_capacity,pic_size=pic_size)
+        self.playing_cache = ExperienceReplay(num_frame_stack,capacity=num_frame_stack * 5 + 10,pic_size=pic_size)
         self.network_update_freq = network_update_freq
         self.action_map = action_map
         self.env = env
@@ -72,16 +42,19 @@ class DQN:
         self.min_experience_size = min_experience_size
         self.pic_size = pic_size
         self.regularization = regularization
-        # These default magic values always work with Adam
         self.optimizer_params = optimizer_params or dict(learning_rate=0.0004, epsilon=1e-7)
-
         self.do_training = True
         self.playing_epsilon = 0.0
         self.session = None
-
         self.state_size = (self.num_frame_stack,) + self.pic_size
         self.global_counter = 0
         self.episode_counter = 0
+
+        if action_map is not None:
+            self.dim_actions = len(action_map)
+        else:
+            self.dim_actions = env.action_space.n
+
         self.q_values = []
         self.loss_his = []
 
@@ -99,8 +72,6 @@ class DQN:
         self.input_actions = tf.placeholder(tf.int32, self.batchsize, "actions")
         self.input_done_mask = tf.placeholder(tf.int32, self.batchsize, "done_mask")
 
-        # These are the state action values for all states
-        # The target Q-values come from the fixed network
         with tf.variable_scope("target"):
             qsa_targets = self.create_network(self.input_next_state, trainable=False)
 
@@ -113,66 +84,58 @@ class DQN:
             qsa_estimates_max = tf.stop_gradient(tf.reduce_sum(tf.multiply(qsa_targets,target_action_onehot),reduction_indices=[1,]))
 
         self.best_action = tf.argmax(qsa_estimates, axis=1)
-
         not_done = tf.cast(tf.logical_not(tf.cast(self.input_done_mask, "bool")), "float32")
         q_target = tf.reduce_max(qsa_targets, -1) * self.gamma * not_done + self.input_reward
-
         self.q_value_mean = tf.reduce_mean(q_target)
-        # select the chosen action from each row
-        # in numpy this is qsa_estimates[range(batchsize), self.input_actions]
         action_slice = tf.stack([tf.range(0, self.batchsize), self.input_actions], axis=1)
         q_estimates_for_input_action = tf.gather_nd(qsa_estimates, action_slice)
 
         training_loss = tf.nn.l2_loss(q_target - q_estimates_for_input_action) / self.batchsize
-
         optimizer = tf.train.AdamOptimizer(**(self.optimizer_params))
-
         reg_loss = tf.add_n(tf.losses.get_regularization_losses())
         self.loss = tf.reduce_mean(reg_loss+ training_loss)
-
         self.train_op = optimizer.minimize(reg_loss + training_loss)
 
         train_params = self.get_variables("train")
         fixed_params = self.get_variables("fixed")
 
-        assert (len(train_params) == len(fixed_params))
-        self.copy_network_ops = [tf.assign(fixed_v, train_v)
-            for train_v, fixed_v in zip(train_params, fixed_params)]
+        try:
+            self.copy_network_ops = [tf.assign(fixed_v, train_v)
+                for train_v, fixed_v in zip(train_params, fixed_params)]
+        except:
+        	print("error")
 
     def get_variables(self, scope):
         vars = [t for t in tf.global_variables()
             if "%s/" % scope in t.name and "Adam" not in t.name]
         return sorted(vars, key=lambda v: v.name)
 
+
     def create_network(self, input, trainable):
         if trainable:
             wr = slim.l2_regularizer(self.regularization)
         else:
             wr = None
-
-        # the input is stack of black and white frames.
-        # put the stack in the place of channel (last in tf)
+   
         input_t = tf.transpose(input, [0, 2, 3, 1])
-
-        net = slim.conv2d(input_t, 8, (7, 7), data_format="NHWC",
-            activation_fn=tf.nn.relu, stride=3, weights_regularizer=wr, trainable=trainable)
+        net = slim.conv2d(input_t, 8, (7, 7), data_format="NHWC",activation_fn=tf.nn.relu, stride=3, weights_regularizer=wr, trainable=trainable)
         net = slim.max_pool2d(net, 2, 2)
-        net = slim.conv2d(net, 16, (3, 3), data_format="NHWC",
-            activation_fn=tf.nn.relu, weights_regularizer=wr, trainable=trainable)
+        net = slim.conv2d(net, 16, (3, 3), data_format="NHWC",activation_fn=tf.nn.relu, weights_regularizer=wr, trainable=trainable)
         net = slim.max_pool2d(net, 2, 2)
         net = slim.flatten(net)
-        net = slim.fully_connected(net, 256, activation_fn=tf.nn.relu,
-            weights_regularizer=wr, trainable=trainable)
-        q_state_action_values = slim.fully_connected(net, self.dim_actions,
-            activation_fn=None, weights_regularizer=wr, trainable=trainable)
+        net = slim.fully_connected(net, 256, activation_fn=tf.nn.relu,weights_regularizer=wr, trainable=trainable)
+        q_value = slim.fully_connected(net, self.dim_actions,activation_fn=None, weights_regularizer=wr, trainable=trainable)
 
-        return q_state_action_values
+        return q_value
+
 
     def check_early_stop(self, reward, totalreward):
         return False, 0.0
 
+
     def get_random_action(self):
         return np.random.choice(self.dim_actions)
+
 
     def get_epsilon(self):
         if not self.do_training:
@@ -180,13 +143,12 @@ class DQN:
         elif self.global_counter >= self.epsilon_decay_steps:
             return self.min_epsilon
         else:
-            # linear decay
             r = 1.0 - self.global_counter / float(self.epsilon_decay_steps)
             return self.min_epsilon + (self.initial_epsilon - self.min_epsilon) * r
 
+
     def train(self):
         batch = self.exp_history.sample_mini_batch(self.batchsize)
-
         fd = {
             self.input_reward: "reward",
             self.input_prev_state: "prev_state",
@@ -196,9 +158,9 @@ class DQN:
         }
         fd1 = {ph: batch[k] for ph, k in fd.items()}
         _, action_value,loss = self.session.run([self.train_op, self.q_value_mean, self.loss], fd1)
-        # print(action_value)
         self.q_values.append(action_value)
         self.loss_his.append(loss)
+
 
     def play_episode(self):
         eh = (
@@ -273,18 +235,10 @@ class DQN:
 
 
 class CarRacingDQN(DQN):
-    """
-    CarRacing specifig part of the DQN-agent
-
-    Some minor env-specifig tweaks but overall
-    assumes very little knowledge from the environment
-    """
-
     def __init__(self, max_negative_rewards=100, **kwargs):
         all_actions = np.array(
             [k for k in it.product([-1, 0, 1], [1, 0], [0.2, 0])]
         )
-        # car racing env gives wrong pictures without render
         kwargs["render"] = True
         super().__init__(
             action_map=all_actions,
@@ -303,10 +257,6 @@ class CarRacingDQN(DQN):
         return 2 * color.rgb2gray(obs) - 1.0
 
     def get_random_action(self):
-        """
-        Here random actions prefer gas to break
-        otherwise the car can never go anywhere.
-        """
         action_weights = 14.0 * self.gas_actions + 1.0
         action_weights /= np.sum(action_weights)
 
