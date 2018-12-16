@@ -1,4 +1,4 @@
-# Deep_Reinforcement_Learning_on_Car_Racing_Game
+# Deep Reinforcement Learning on Car Racing Game
 
 ![License](https://img.shields.io/badge/license-apache2_2-blue.svg)
 
