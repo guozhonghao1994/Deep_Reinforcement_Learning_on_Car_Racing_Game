@@ -20,7 +20,7 @@ OpenAI [Car Racing-v0](https://gym.openai.com/envs/CarRacing-v0/)
 ![](https://media.giphy.com/media/3og0IEKu84Ros9izyU/giphy.gif)
 
 ## Algorithm
-We try DQN, Double DQN(DDQN) and dueling DQN. Please refer to the [presentation](https://github.com/guozhonghao1994/Deep_Reinforcement_Learning_on_Car_Racing_Game/blob/master/Presentation.pdf) for detailed algorithm explanation. Also, you should have some basic knowledge on [Reinforcement Learning](https://en.wikipedia.org/wiki/Reinforcement_learning) and [Q-learning](https://en.wikipedia.org/wiki/Q-learning). 
+We try DQN, Double DQN(DDQN) and dueling DQN. Please refer to the [Presentation](https://github.com/guozhonghao1994/Deep_Reinforcement_Learning_on_Car_Racing_Game/blob/master/Presentation.pdf) for detailed algorithm explanation. Also, you should have some basic knowledge on [Reinforcement Learning](https://en.wikipedia.org/wiki/Reinforcement_learning) and [Q-learning](https://en.wikipedia.org/wiki/Q-learning). 
 
 ## Installation
 1. `pip install -r requirements.txt`
@@ -34,7 +34,7 @@ We try DQN, Double DQN(DDQN) and dueling DQN. Please refer to the [presentation]
 4. On CPU, it takes about 8 hours to get a well-trained model.
 
 ## Introduction
-The DQN,DDQN and dueling DQN have similar structures. Take DQN for example:
+The DQN, DDQN and dueling DQN have similar structures. Take DQN for example:
 
 `DQN/car_cacing.py` - main entrance, the executable file
 
